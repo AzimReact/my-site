@@ -7,14 +7,13 @@
     <meta name="description"
         content="Разработка сайтов в Бишкеке под ключ для вашего бизнеса. Быстро, качественно и с полным сопровождением.">
     <meta name="keywords" content="разработка сайтов, создание сайта, сайт под ключ, разработка сайта Бишкек">
-    <meta name="author" content="Ваше Имя">
+    <meta name="author" content="Azim Aitbekov">
 
-    <!-- Open Graph meta tags -->
     <meta property="og:title" content="Разработка сайтов в Бишкеке | Ваш Бизнес">
     <meta property="og:description"
         content="Качественная разработка сайтов для вашего бизнеса с учётом всех современных требований и трендов.">
-    <meta property="og:image" content="URL_к_вашему_изображению">
-    <meta property="og:url" content="https://ваш_сайт.ком">
+    <!-- <meta property="og:image" content="URL_к_вашему_изображению"> -->
+    <meta property="og:url" content="https://bishkeksite.vercel.app">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card meta tags -->
@@ -22,14 +21,13 @@
     <meta name="twitter:title" content="Разработка сайтов в Бишкеке | Ваш Бизнес">
     <meta name="twitter:description"
         content="Качественная разработка сайтов для вашего бизнеса с учётом всех современных требований и трендов.">
-    <meta name="twitter:image" content="URL_к_вашему_изображению">
+    <!-- <meta name="twitter:image" content="URL_к_вашему_изображению"> -->
 
     <title>Разработка сайтов в Бишкеке | Ваш Бизнес</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Секция 1: Продающий блок -->
     <section id="hero">
         <div class="container">
             <h1>Разработка сайтов под ключ в Бишкеке</h1>
@@ -39,13 +37,12 @@
         </div>
     </section>
 
-    <!-- Секция 2: Форма обратной связи -->
     <section id="contact">
         <div class="container">
             <h2>Свяжитесь с нами</h2>
-            <form id="contactForm"
+            <form id="contactForm" target="_blank"
                 action="https://docs.google.com/forms/d/e/1FAIpQLScGO6lKXwPJzuV-9bKXYslEIIxsmdjD-CmQgGWvd8-xb2jgfA/formResponse"
-                method="POST">
+                method="POST" onsubmit="handleSubmit(event)">
                 <label for="name">Ваше имя</label>
                 <input type="text" id="name" name="entry.497169278" required placeholder="Введите ваше имя">
 
@@ -60,7 +57,6 @@
         </div>
     </section>
 
-    <!-- Секция 3: Футер -->
     <footer id="footer">
         <div class="container">
             <p>&copy; 2024 Разработка сайтов в Бишкеке. Все права защищены.</p>
@@ -72,6 +68,16 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Спасибо, мы с вами свяжемся');
+            const form = document.getElementById('contactForm');
+            form.reset()
+        }
+    </script>
+
 </body>
 
 </html>
