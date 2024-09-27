@@ -47,7 +47,10 @@
                 <input type="text" id="name" name="entry.497169278" required placeholder="Введите ваше имя">
 
                 <label for="email">Ваш email</label>
-                <input type="email" id="email" name="entry.1487717299" required placeholder="Введите ваш email">
+                <input type="email" id="email" name="entry.1487717299" placeholder="Введите ваш email">
+
+                <label for="phone">Ваш телефон:</label>
+                <input type="tel" id="phone" name="entry.1357429650" required placeholder="+996 XXX XXX XXX">
 
                 <label for="message">Сообщение</label>
                 <textarea id="message" name="entry.520274626" required placeholder="Ваше сообщение"></textarea>
@@ -60,22 +63,37 @@
     <footer id="footer">
         <div class="container">
             <p>&copy; 2024 Разработка сайтов в Бишкеке. Все права защищены.</p>
-            <p>Телефон: +996 XXX-XXX-XXX | Email: info@yourbusiness.com</p>
+            <p>Телефон: +996 990-553-230 | Email: azimreact@gmail.com</p>
             <ul class="social-links">
-                <li><a href="#" target="_blank">Facebook</a></li>
-                <li><a href="#" target="_blank">Instagram</a></li>
-                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.facebook.com/azim.aitbekov/?locale=ru_RU" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/azim_aitbekov/" target="_blank">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/azim-aitbekov/" target="_blank">LinkedIn</a></li>
             </ul>
         </div>
     </footer>
 
     <script>
+
         function handleSubmit(event) {
             event.preventDefault();
-            alert('Спасибо, мы с вами свяжемся');
+
             const form = document.getElementById('contactForm');
-            form.reset()
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                mode: 'no-cors'
+            })
+                .then(() => {
+                    alert('Спасибо, мы с вами свяжемся');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Ошибка при отправке данных:', error);
+                });
         }
+
     </script>
 
 </body>
